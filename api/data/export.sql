@@ -1,0 +1,15 @@
+BEGIN TRANSACTION;
+INSERT INTO "mcategories" ("id","code","title","imageUrl","createdAt","updatedAt") VALUES (1,'root','Pamatbloks','','','');
+INSERT INTO "mcategories" ("id","code","title","imageUrl","createdAt","updatedAt") VALUES (2,'living','Dzīvojamais bloks','','','');
+INSERT INTO "mcategories" ("id","code","title","imageUrl","createdAt","updatedAt") VALUES (3,'garage','Garāžas','','','');
+INSERT INTO "mcategories" ("id","code","title","imageUrl","createdAt","updatedAt") VALUES (4,'sauna','Saunas','','','');
+INSERT INTO "mcategories" ("id","code","title","imageUrl","createdAt","updatedAt") VALUES (5,'terrace','Terases','','','');
+INSERT INTO "mblocks" ("id","code","title","imageUrl","description","createdAt","updatedAt","mcategoryId") VALUES (1,'root1','Pamatbloks','','','','',1);
+INSERT INTO "mblocks" ("id","code","title","imageUrl","description","createdAt","updatedAt","mcategoryId") VALUES (2,'garage1','Garāža Nr.2','','Grāža diviem auto','','',3);
+INSERT INTO "mblocks" ("id","code","title","imageUrl","description","createdAt","updatedAt","mcategoryId") VALUES (3,'sauna1','Sauna Nr.1','','Sauna ar atpūtas zonu','','',4);
+INSERT INTO "mblocks" ("id","code","title","imageUrl","description","createdAt","updatedAt","mcategoryId") VALUES (4,'terase1','Terase Nr.1','','Terase','','',5);
+INSERT INTO "mvariants" ("id","code","subtitle","m2","price","imageUrl","description","createdAt","updatedAt","mblockId") VALUES (1,'root1','',34.8,35000,'','','','',1);
+INSERT INTO "mvariants" ("id","code","subtitle","m2","price","imageUrl","description","createdAt","updatedAt","mblockId") VALUES (2,'garage1','',18,9000,'',NULL,'','',2);
+INSERT INTO "mvariants" ("id","code","subtitle","m2","price","imageUrl","description","createdAt","updatedAt","mblockId") VALUES (3,'sauna1','',12.25,12000,'',NULL,'','',3);
+INSERT INTO "mvariants" ("id","code","subtitle","m2","price","imageUrl","description","createdAt","updatedAt","mblockId") VALUES (4,'terase1','',16.5,4000,'',NULL,'','',NULL);
+COMMIT;
