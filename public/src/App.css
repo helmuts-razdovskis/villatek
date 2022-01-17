@@ -1,0 +1,131 @@
+/* * {
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+html {
+  background-color: white;
+  margin:0;
+  padding: 0;
+  font-family: "Tahoma", "GenevaTT";
+  height: 100%;
+}
+body > #root > div {
+  height: 100vh;
+  padding: 4px;
+}
+@media only screen and (min-width: 768px) {
+  body {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+.App {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.App-body{
+  flex-grow: 1;
+  overflow: hidden;
+  background-color: aqua;
+}
+.App-header {
+  flex-shrink: 0;
+  overflow: hidden;
+
+  width: 100%;
+  height: 32px;
+  display: flex;
+  align-self: flex-start;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+
+.App-footer{
+  flex-shrink: 0;
+  height: 36px;
+  min-height: 1em;
+  overflow: hidden;
+}
+
+.logo-main {
+  background-image: URL(./assets/images/logo_asym.png);
+  background-size: contain;
+
+  height: 95%;
+  width: 100px;
+}
+
+.social-icon {
+  align-self: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.right-group-first {
+  margin-left: auto;
+}
+
+
+.App-Board {
+  position: relative;
+}
+.App-Board-button {
+  position: absolute;
+  z-index: 1000;
+  border: solid #333333 1px;
+  cursor: pointer;
+  text-align: center;
+  padding: 3px 0;
+  width: 24px;
+  height: 24px;
+}
+.App-Board-zoomin {
+  right: 0px;
+  bottom: 32px;
+}
+.App-Board-zoomout {
+  right: 0px;
+  bottom: 6px;
+}
+
+.App-ItemPicker{
+  height: 300px;
+}
+
+.CartEdit-body {
+  padding-left: 1rem;
+  font-size: smaller;
+}
+
+.embla {
+  overflow: hidden;
+  max-height: 100%;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  position: relative;
+  flex: 0 0 auto;
+  padding: 2px;
+  margin-right: 2px;
+  font-weight: bolder;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: transparent solid 1px; /* reserve a space for is-selected border */
+}
+
+.is-selected {
+  border: skyblue dashed 1px;
+}
+
+.fullsize {
+    width: 100%;
+    height: 100%; 
+    overflow: hidden;
+}
