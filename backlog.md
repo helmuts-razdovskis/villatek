@@ -1,0 +1,4 @@
+- use meta-model.json for publishing/production and live api for model changes preview
+	- meta api access only for authorized
+	- meta-model.json versioning/history
+		- model version with order submit

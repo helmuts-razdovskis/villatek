@@ -4,7 +4,7 @@ import useBus from 'use-bus';
 import { ProgressBar } from 'primereact/progressbar';
 import { MetaContext, ModelContext } from '../../AppContexts';
 import { BusEvents } from '../../Constants';
-import { ImageUrl } from '../../Configuratoin';
+import { ImageUrl } from '../../Configuration';
 import { ModelEntry } from './Model';
 
 function Board(props) {
@@ -36,11 +36,21 @@ function Board(props) {
 
     const loadImage = function (url, kimage, klayer) {
         console.log("LoadImage: " + url);
+        
+    
         var image = new Image();
         image.onload = function () {
             kimage.image(image);
             zoomToFit();
         };
+        image.onerror = function () {
+            const error_image = new Image();
+            error_image.onload = function () {
+                kimage.image(error_image);
+                zoomToFit();
+            };
+            error_image.src = '/images/error-icon.png';
+        }
         image.src = url;
         klayer.add(kimage);
         return kimage;
@@ -73,6 +83,7 @@ function Board(props) {
             ev.target.opacity(1);
             entry.setState(0);
             deselect();
+            model.store.updated();
         });
 
         if (entry.getState() === -1) {
